@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/screen/home/model/home_model.dart';
 
-
 class Recomendate extends StatelessWidget {
   final TravelDestination destination;
+
   const Recomendate({super.key, required this.destination});
 
   @override
@@ -61,7 +61,7 @@ class Recomendate extends StatelessWidget {
                         fontSize: 12,
                         color: Colors.black.withOpacity(0.6),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(height: 5),
@@ -90,7 +90,7 @@ class Recomendate extends StatelessWidget {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
@@ -118,7 +118,7 @@ class Recomendate extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

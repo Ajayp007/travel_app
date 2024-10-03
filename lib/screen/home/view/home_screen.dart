@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:travel_app/screen/detail/view/detail_screen.dart';
 import 'package:travel_app/screen/home/controller/home_controller.dart';
 import 'package:travel_app/screen/home/model/home_model.dart';
 import 'package:travel_app/utils/widgets/popular_place.dart';
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<TravelDestination> recomendate =
   myDestination.where((element) => element.category == "recomend").toList();
   List<IconData> icons = [
-    Iconsax.home_1,
+    Iconsax.home,
     Iconsax.search_normal,
     Icons.confirmation_number_outlined,
     Icons.bookmark_outline,
@@ -35,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      appBar: headerParts(),
+      appBar: myAppBar(),
       body: Column(
         children: [
           const SizedBox(height: 20),
@@ -73,14 +74,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (_) => PlaceDetailScreen(
-                      //       destination: popular[index],
-                      //     ),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => DetailScreen(
+                            destination: popular[index],
+                          ),
+                        ),
+                      );
                     },
                     child: PopularPlace(
                       destination: popular[index],
@@ -124,14 +125,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.only(bottom: 15),
                     child: GestureDetector(
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (_) => PlaceDetailScreen(
-                        //       destination: recomendate[index],
-                        //     ),
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => DetailScreen(
+                              destination: recomendate[index],
+                            ),
+                          ),
+                        );
                       },
                       child: Recomendate(
                         destination: recomendate[index],
@@ -142,48 +143,50 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 15,
-                          vertical: 22,
-                        ),
-                        decoration: BoxDecoration(
-                          color: kButtonColor,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: List.generate(
-                            icons.length,
-                                (index) => GestureDetector(
-                              onTap: () {
-                                controller.selectedIndex.value = index;
-                              },
-                              child: Icon(
-                                icons[index],
-                                size: 32,
-                                color: controller.selectedIndex.value == index
-                                    ? Colors.white
-                                    : Colors.white.withOpacity(0.4),
+          Obx(
+            () => Align(
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 22,
+                          ),
+                          decoration: BoxDecoration(
+                            color: kButtonColor,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: List.generate(
+                              icons.length,
+                                  (index) => GestureDetector(
+                                onTap: () {
+                                  controller.selectedIndex.value = index;
+                                },
+                                child: Icon(
+                                  icons[index],
+                                  size: 32,
+                                  color: controller.selectedIndex.value == index
+                                      ? Colors.white
+                                      : Colors.white.withOpacity(0.4),
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 30),
-                    ],
+                        const SizedBox(height: 30),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           )
         ],
@@ -191,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  AppBar headerParts() {
+  AppBar myAppBar() {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.white,
@@ -205,7 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(width: 5),
           Text(
-            "Jawa Timur",
+            "Ajay Purohit",
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 18,

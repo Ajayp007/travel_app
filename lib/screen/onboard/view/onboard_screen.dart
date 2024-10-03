@@ -38,9 +38,6 @@ class _OnboardScreenState extends State<OnboardScreen> {
             PageView.builder(
               itemCount: onboarding.length,
               onPageChanged: (value) {
-                // setState(() {
-                //   currentIndex = value;
-                // });
                 controller.currentIndex.value = value;
               },
               itemBuilder: (context, index) {
@@ -145,7 +142,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Get.offAndToNamed('home');
+                                Get.toNamed('signup');
                               },
                               child: Container(
                                 height: 75,
