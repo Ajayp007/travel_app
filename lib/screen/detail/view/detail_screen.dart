@@ -26,7 +26,7 @@ class _DetailScreenState extends State<DetailScreen> {
         leadingWidth: 64,
         leading: GestureDetector(
           onTap: () {
-            Navigator.pop(context);
+            //Navigator.pop(context);
           },
           child: Padding(
             padding: const EdgeInsets.only(left: 10),
