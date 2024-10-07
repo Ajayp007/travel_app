@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:iconsax/iconsax.dart';
-
-import '../../../utils/helper/fireauth_helper.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -95,7 +92,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 40,
                     color: Colors.black,
                     onPressed: () async {
-                      Get.offAllNamed('home');
+                      Get.offAllNamed('signing');
                     },
                     child: const Text("Sign Up"),
                   ),
@@ -104,7 +101,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 InkWell(
                   onTap: () {
 
-                     Get.offAllNamed('home');
+                     Get.offAllNamed('signing');
                   },
                   child: const Text.rich(
                     TextSpan(

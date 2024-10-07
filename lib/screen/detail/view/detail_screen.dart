@@ -4,9 +4,9 @@ import 'package:travel_app/screen/detail/controller/detail_controller.dart';
 import 'package:travel_app/screen/home/model/home_model.dart';
 import 'package:travel_app/utils/widgets/selected_colors.dart';
 
-
 class DetailScreen extends StatefulWidget {
   final TravelDestination destination;
+
   const DetailScreen({super.key, required this.destination});
 
   @override
@@ -26,7 +26,7 @@ class _DetailScreenState extends State<DetailScreen> {
         leadingWidth: 64,
         leading: GestureDetector(
           onTap: () {
-            //Navigator.pop(context);
+            Get.back();
           },
           child: Padding(
             padding: const EdgeInsets.only(left: 10),
@@ -68,7 +68,7 @@ class _DetailScreenState extends State<DetailScreen> {
         ],
       ),
       body: Obx(
-        () =>  Padding(
+        () => Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
             children: [
@@ -93,14 +93,11 @@ class _DetailScreenState extends State<DetailScreen> {
                       PageView(
                         controller: pageController,
                         onPageChanged: (value) {
-                          // setState(() {
-                          //   pageView = value;
-                          // });
                           controller.pageIndex.value = value;
                         },
                         children: List.generate(
                           widget.destination.image!.length,
-                              (index) => Image.network(
+                          (index) => Image.network(
                             fit: BoxFit.cover,
                             widget.destination.image![index],
                           ),
@@ -116,7 +113,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               height: 100,
                               width: 100,
                               margin:
-                              const EdgeInsets.only(right: 10, bottom: 10),
+                                  const EdgeInsets.only(right: 10, bottom: 10),
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   width: 2,
@@ -125,13 +122,14 @@ class _DetailScreenState extends State<DetailScreen> {
                                 borderRadius: BorderRadius.circular(15),
                                 image: DecorationImage(
                                   image: widget.destination.image!.length - 1 !=
-                                      controller.pageIndex.value
+                                          controller.pageIndex.value
                                       ? NetworkImage(
-                                    widget.destination.image![controller.pageIndex.value + 1],
-                                  )
+                                          widget.destination.image![
+                                              controller.pageIndex.value + 1],
+                                        )
                                       : NetworkImage(
-                                    widget.destination.image![0],
-                                  ),
+                                          widget.destination.image![0],
+                                        ),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -147,7 +145,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: List.generate(
                                       widget.destination.image!.length,
-                                          (index) => GestureDetector(
+                                      (index) => GestureDetector(
                                         onTap: () {
                                           if (pageController.hasClients) {
                                             pageController.animateToPage(
@@ -161,16 +159,18 @@ class _DetailScreenState extends State<DetailScreen> {
                                         },
                                         child: AnimatedContainer(
                                           duration:
-                                          const Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                           height: 5,
                                           width: 20,
-                                          margin: const EdgeInsets.only(right: 5),
+                                          margin:
+                                              const EdgeInsets.only(right: 5),
                                           decoration: BoxDecoration(
-                                            color: controller.pageIndex.value == index
+                                            color: controller.pageIndex.value ==
+                                                    index
                                                 ? Colors.white
                                                 : Colors.white.withOpacity(0.4),
                                             borderRadius:
-                                            BorderRadius.circular(10),
+                                                BorderRadius.circular(10),
                                           ),
                                         ),
                                       ),
@@ -179,12 +179,13 @@ class _DetailScreenState extends State<DetailScreen> {
                                   const SizedBox(height: 15),
                                   Row(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             widget.destination.name,
@@ -197,7 +198,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                           const SizedBox(height: 5),
                                           Row(
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.end,
+                                                CrossAxisAlignment.end,
                                             children: [
                                               const Icon(
                                                 Icons.location_on,
@@ -219,7 +220,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                       ),
                                       Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.end,
+                                            CrossAxisAlignment.end,
                                         children: [
                                           Row(
                                             children: [

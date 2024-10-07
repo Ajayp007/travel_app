@@ -136,13 +136,13 @@ class _OnboardScreenState extends State<OnboardScreen> {
                         topRight: Radius.circular(35),
                       ),
                       child: Container(
-                        padding: const EdgeInsets.all(35),
+                        padding: const EdgeInsets.all(36),
                         color: Colors.white,
                         child: Column(
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Get.toNamed('signup');
+                                Get.toNamed('signing');
                               },
                               child: Container(
                                 height: 75,
@@ -182,24 +182,29 @@ class _OnboardScreenState extends State<OnboardScreen> {
                               ),
                             ),
                             const SizedBox(height: 30),
-                            const Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "already have account? ",
-                                    style: TextStyle(
-                                      fontSize: 16,
+                            GestureDetector(
+                              onTap: () {
+                                Get.toNamed('signup');
+                              },
+                              child: const Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: "Don't have account? ",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                      ),
                                     ),
-                                  ),
-                                  TextSpan(
-                                    text: "Login",
-                                    style: TextStyle(
-                                      color: Colors.blue,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16,
+                                    TextSpan(
+                                      text: "Sign Up",
+                                      style: TextStyle(
+                                        color: Colors.blue,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                             const SizedBox(height: 20),

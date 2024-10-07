@@ -7,6 +7,6 @@ import 'package:travel_app/screen/signin/view/signup_screen.dart';
 Map<String,WidgetBuilder> app_routes = {
   '/':(context) => const OnboardScreen(),
   'home':(context) => const HomeScreen(),
-  'signing':(context) => const SigningScreen(),
+  'signing':(context) => const SigninScreen(),
   'signup':(context) => const SignupScreen(),
 };
