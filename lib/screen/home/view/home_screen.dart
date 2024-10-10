@@ -4,6 +4,7 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:travel_app/screen/detail/view/detail_screen.dart';
 import 'package:travel_app/screen/home/controller/home_controller.dart';
 import 'package:travel_app/screen/home/model/home_model.dart';
+import 'package:travel_app/screen/profile/controller/user_controller.dart';
 import 'package:travel_app/utils/widgets/popular_place.dart';
 import 'package:travel_app/utils/widgets/recommend_place.dart';
 import 'package:travel_app/utils/widgets/selected_colors.dart';
@@ -19,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<TravelDestination> popular =
   myDestination.where((element) => element.category == "popular").toList();
-  // this means only display those data whose category is recomend
   List<TravelDestination> recomendate =
   myDestination.where((element) => element.category == "recomend").toList();
   List<IconData> icons = [
@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   HomeController controller = Get.put(HomeController());
+  ProfileController profileController = Get.put(ProfileController());
 
   @override
   Widget build(BuildContext context) {
@@ -199,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
       elevation: 0,
       backgroundColor: Colors.white,
       leadingWidth: 180,
-      leading: const Row(
+      leading:  Row(
         children: [
           SizedBox(width: 15),
           Icon(
@@ -208,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(width: 5),
           Text(
-            "Ajay Purohit",
+            "${profileController.model.value.name}",
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 18,

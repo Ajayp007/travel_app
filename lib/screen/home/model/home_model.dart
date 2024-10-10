@@ -148,6 +148,34 @@ List<TravelDestination> myDestination = [
     description: description,
     rate: 4.7,
   ),
+  TravelDestination(
+    id: 6,
+    name: "Gir National Park",
+    review: random.nextInt(300) + 25,
+    category: "popular",
+    price: 199,
+    image: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5d/d6/5a/caption.jpg?w=500&h=400&s=1",
+      "https://www.gujarattourism.com/content/dam/gujrattourism/images/zone-wise-thumb-images/gir-somnath.jpg",
+    ],
+    location: "Gir, Gir Somnath",
+    description: description,
+    rate: 4.7,
+  ),
+  TravelDestination(
+    id: 10,
+    name: "Girnar",
+    category: "recomend",
+    review: random.nextInt(300) + 25,
+    price: 499,
+    image: [
+      "https://atlastravel.in/wp-content/uploads/2022/04/junagadh-city-tour-4.webp",
+      "https://www.gujarattourism.com/content/dam/gujrattourism/images/religious-sites/damodar-kund/Damodar-Kund-Thumbnail.jpg",
+    ],
+    location: "Junagadh,Gujarat",
+    description: description,
+    rate: 4.8,
+  ),
 ];
 const description =
     'Travel places offer a wide array of experiences, each with its own unique charm and appeal. From stunning natural landscapes to historic landmarks, there is something for every traveler. Coastal TravelDestinations like tropical beaches invite relaxation with crystal-clear waters, while mountainous regions offer adventurous hiking trails and breathtaking views.';

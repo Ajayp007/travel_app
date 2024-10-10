@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:travel_app/screen/user/controller/user_controller.dart';
+import 'package:travel_app/screen/profile/controller/user_controller.dart';
 import 'package:travel_app/utils/helper/fireauth_helper.dart';
 
 class SigninScreen extends StatefulWidget {
@@ -86,7 +86,6 @@ class _SigninScreenState extends State<SigninScreen> {
                       onPressed: () async {
                         FireAuthHelper.helper
                             .signInAuth(txtEmail.text, txtPassword.text);
-
                         bool response = FireAuthHelper.helper.checkUser();
                         if (response) {
                           Get.offAllNamed('home');

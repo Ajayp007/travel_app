@@ -1,6 +1,4 @@
-
-
-import 'package:travel_app/screen/user/model/user_screen.dart';
+import 'package:travel_app/screen/profile/model/user_screen.dart';
 import 'package:travel_app/utils/helper/fireauth_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

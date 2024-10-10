@@ -8,4 +8,6 @@ class HomeController extends GetxController
   {
     selectedIndex.value = index;
   }
+
+
 }

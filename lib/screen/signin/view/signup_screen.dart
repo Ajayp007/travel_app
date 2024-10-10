@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:travel_app/utils/helper/fireauth_helper.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -92,6 +93,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 40,
                     color: Colors.black,
                     onPressed: () async {
+                      FireAuthHelper.helper
+                          .signUpAuth(txtEmail.text, txtPassword.text);
                       Get.offAllNamed('signing');
                     },
                     child: const Text("Sign Up"),
@@ -100,8 +103,9 @@ class _SignupScreenState extends State<SignupScreen> {
                 const SizedBox(height: 30),
                 InkWell(
                   onTap: () {
-
-                     Get.offAllNamed('signing');
+                    FireAuthHelper.helper
+                        .signUpAuth(txtEmail.text, txtPassword.text);
+                    Get.offAllNamed('signing');
                   },
                   child: const Text.rich(
                     TextSpan(
