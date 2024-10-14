@@ -45,6 +45,7 @@ dependencies:
   firebase_database: ^11.0.3
   cloud_firestore: ^5.1.0
   flutter_local_notifications: ^17.2.1+2
+  dot_curved_bottom_nav: ^0.0.2
 
 dev_dependencies:
   flutter_test:

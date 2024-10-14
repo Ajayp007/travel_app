@@ -200,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
       elevation: 0,
       backgroundColor: Colors.white,
       leadingWidth: 180,
-      leading:  Row(
+      leading:  const Row(
         children: [
           SizedBox(width: 15),
           Icon(
@@ -209,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(width: 5),
           Text(
-            "${profileController.model.value.name}",
+            "Ajay Purohit",
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 18,

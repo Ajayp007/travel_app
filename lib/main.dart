@@ -11,6 +11,7 @@ void main() async {
   );
   runApp(
     GetMaterialApp(
+      initialRoute: 'bottom',
       debugShowCheckedModeBanner: false,
       routes: app_routes,
     ),
