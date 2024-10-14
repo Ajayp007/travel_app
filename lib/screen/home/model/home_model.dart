@@ -61,7 +61,6 @@ List<TravelDestination> myDestination = [
     price: 599,
     category: 'recomend',
     image: [
-      "https://myrepublica.nagariknetwork.com/uploads/media/2019/May/eve%20of%20buddha%20jayanti%20in%20lumbini%2004.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFF40BKievkEY2Kd1wP-MEcK1ITOdvf_DzhA&s",
       "https://upload.wikimedia.org/wikipedia/commons/1/18/BRP_Lumbini_Mayadevi_temple.jpg",
       "https://blogger.googleusercontent.com/img/a/AVvXsEgJLGz7rSD1euAgJjZipKghOwfNYcXHYzAKNPIak9V6sfHj5QI1fSMkQQa3LbYstY0JsPQ4Uad6Z4aoqEeJfSXtyhojJHog73SCPmqLE-CyNrqGpjKDFQhNcMJ3Hg46F7qF75XzYLz9W7qqckJQHY4dGbpquC0NiGjDnGhh0OQvM7tH_v5FKmyDTv_mC4g",
